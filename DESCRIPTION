@@ -1,0 +1,10 @@
+Package: Ly
+Type: Package
+Title: Prime Number Checker
+Version: 0.1.0
+Author: Brandon Ly
+Maintainer: Bvl@usf.edu
+Description: Checks if an integer is a prime number.
+License: CC0
+Encoding: UTF-8
+LazyData: true
