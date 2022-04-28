@@ -1,0 +1,85 @@
+---
+title: "R Programming Final Project"
+author: "Brandon Ly"
+date: "4/27/2022"
+output: html_document
+---
+[Github](https://github.com/BrandonSchoolPF/Package)
+
+****
+
+## What is a Prime Number?
+
+A prime number is an integer in which two whole numbers cannot be multiplied to 
+get that integer.  
+
+For example, 4 is not a prime number because 2x2 = 4. But, 5 is a prime number
+because no two same whole numbers can be multiplied in order to get 5.  
+
+****
+
+## 'ly' Package
+
+The Package that I have created contains the function 'is.prime()' where if you
+input an integer it will return a logical answer of either TRUE or FALSE.
+
+```{r}
+library(ly)
+
+is.prime(4)
+
+is.prime(5)
+```
+
+As we can see here, the first command is.prime(4) returned a false statement 
+because as stated before, 4 is not a prime number because two equal whole numbers
+can be multiplied together in order to get 4, but 5 does not.  
+
+If we were to use a data frame we could use this function to test if an 
+observation is a prime number or not.
+
+```{r}
+head(mtcars)
+
+is.prime(mtcars[1,3])
+```
+The Mazda RX4 displacement or engine size of 160 is not a prime number. 
+
+***
+
+## How it Works
+
+Taking a look at the script that provides the function, the function only 
+contains an if else statement. 
+
+```{r}
+is.prime <- function(x) {
+  if (x == 2) {
+    TRUE
+  } else if (any(x %% 2:(x-1) == 0)) {
+    FALSE
+  } else {
+    TRUE
+  }
+}
+```
+
+If we were to get a number that is greater than 2 (1 is considered not a prime
+ number), if that number can divide itself by 2 with both products equaling to 
+ each other but not also equal to 0 then the function will return TRUE, if not 
+ it will return FALSE.
+ 
+```{r}
+is.prime <- function(x) {
+  if (x == 2) {
+    TRUE
+  } else if (any(x %% 2:(x-1) == 0)) {
+    FALSE
+  } else {
+    TRUE
+  }
+}
+
+is.prime(574389)
+```
+
